@@ -1,6 +1,6 @@
 <?php
-/*$usernameError = false;
-$emailError = false; */
+/*$usernameError = true;
+$emailError = true; */
 $message = '';
 
 $nameErr = $emailErr = $genderErr = $dobErr = $phoneErr = $preaddErr = $relErr = "";
@@ -181,8 +181,8 @@ if (isset($_POST["submit"]))
 
     if (!empty($name) && !empty($email) && !empty($pass) && !empty($conpass) && !empty($gender) && !empty($dob) && !empty($phone)) 
     {
-        session_start();
-        header("location:../views/Login.php");
+        /*session_start();*/
+        
         define("FILENAME", "../model/Data.json"); //define filename
         $file1 = fopen(FILENAME, "r"); //opened the file in only read mode
         $fr = fread($file1, filesize(FILENAME));//reading the file and storing in $fr
@@ -194,18 +194,39 @@ if (isset($_POST["submit"]))
             $flag = true;
             for($i=0; $i<count($json); $i++)
             {
+                if($json[$i]->username === $username && $json[$i]->email === $email)
+                {
+                    $usernameError = true;
+                    $emailError = true; 
+                    echo"<script>
+                     alert('Both Username & Email already Exists');
+                     window.location.href='Sign_up.php';
+                     </script>";
+                }
                 if($json[$i]->username === $username)
                 {
                     $flag = false;
                     $usernameError = true;
+                     echo"<script>
+                     alert('Username already Exists');
+                     window.location.href='Sign_up.php';
+                     </script>";   
                     /*echo '<script>alert("Username already Exists")</script>'; */
                     break;                                       
                 }
-                else if($json[$i]->email === $email)
+                if($json[$i]->email === $email)
                 {
                   $flag = false;
                   $emailError = true; 
+                  echo"<script>
+                     alert('Email already Exists');
+                     window.location.href='Sign_up.php';
+                     </script>"; 
                   break;                  
+                }
+                if($usernameError==false && $emailError==false)
+                {
+                   header("location:../views/Login.php");
                 }
 
             }
@@ -264,9 +285,13 @@ if (isset($_POST["submit"]))
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
      <title>Sign up Razer Store</title>
-    <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
-           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> --> 
+     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">  
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+     
      <style type="text/css">
         h1 {text-align: center;}
         .error {
@@ -281,7 +306,7 @@ if (isset($_POST["submit"]))
     <div class="container" style="width:500px;">                   
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" novalidate>
         <?php
-        if($usernameError==true)
+        /*if($usernameError==true)
         {
             echo "Username Already Exists";
         }
@@ -291,9 +316,9 @@ if (isset($_POST["submit"]))
         if ($emailError==true)
         {
                 echo "Email Already Exists";
-               /* echo '<script>alert("Email Already Exists")</script>';*/
-        }
                
+        }
+           */           
         if (isset($error)) 
         {
             echo $error;
@@ -372,7 +397,7 @@ if (isset($_POST["submit"]))
 
         <input type="submit" name="submit" value="Sign Up" class="btn btn-info" /><br />
         <br>
-        <input type="reset" name="submit">
+        <input type="reset" name="reset" value="RESET" class="btn btn-outline-danger">
         <?php
         if (isset($message)) 
         {
