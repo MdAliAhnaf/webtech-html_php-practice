@@ -1,0 +1,301 @@
+<!--doctype html-->
+<html>
+<head>
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE-edge">
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
+<title>Personal Website</title>
+	<!--style----->
+	<style>
+@charset "utf-8";
+/* CSS Document */
+body{
+	margin:0px;
+	padding: 0px;
+	font-family: poppins;
+	
+}
+*{
+	box-sizing:border-box;
+	scroll-behavior: smooth;
+}
+ul{
+	list-style:none;
+}
+a{
+	text-decoration:none;
+}
+#main{
+	width:100%;
+	height:100vh;
+	position: relative;
+}
+nav{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	box-shadow: 5px 10px 30px rgba(0,0,0,0.02);
+	position: fixed;
+	left: 0;
+	top: 0;
+	width:100%;
+	z-index: 1;
+	background-color: #FFFFFF;
+}
+.logo img{
+	height:45px;
+}
+nav ul{
+	display: flex;
+}
+nav ul li a{
+	height:40px;
+	line-height: 43px;
+	margin: 3px;
+	padding: 0px 22px;
+	display: flex;
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	font-weight: 500;
+	color:#585b5b;
+	letter-spacing: 1px;
+}
+.Contact{
+	color:#39bfbd;
+	font-weight: 500;
+	font-size: 0.9rem;
+	border-bottom: 2px solid #40c6c4;
+}
+nav ul li a:hover{
+	background-color: #2adabc;
+	color:#FFFFFF;
+	box-shadow: 5px 10px 30px rgba(64,198,196,0.3);
+	transition: all ease 0.2s;
+}
+		body{
+			font-family:poppins;
+		}
+
+		.model img{
+	width:100%;
+	height: 100%;
+	object-fit: contain;
+}
+.model{
+	width:500px;
+	height: 500px;
+}
+.content{
+	width:90%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+.main-text{
+	width:500px;
+}
+.main-text h1{
+	font-size: 3.5rem;
+	color:#1c3548;
+	margin:0px 0px 10px 0px;
+	line-height: 60px;
+}
+.main-text p{
+	color:#747474;
+}
+.portfolio-btn{
+	width:190px;
+	height: 44px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color:#FFFFFF;
+	background-color: #1db096;
+	border-radius: 20px;
+	box-shadow: 4px 10px 30px rgba(24,139,119,0.2);
+}
+.portfolio-btn:hover{
+	background-color: #23cdaf;
+	transition: all ease 0.2s;
+}
+
+#skills{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width:90%;
+	margin:auto auto 50px auto;
+}
+.skill-text{
+	width:400px;
+}
+.skill-img{
+	width:600px;
+	height: 600px;
+}
+.skill-img img{
+	width:100%;
+	height: 100%;
+	object-fit: contain;
+}
+.skill-heading span{
+	color:#36b7b5;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 1rem;
+}
+.skill-heading h2{
+	color: #1c3548;
+	font-size: 3.3rem;
+	margin:0px;
+	font-weight: 400;
+	letter-spacing: 1px;
+}
+.s-box-container{
+	margin-top: 30px;
+}
+.skill-box{
+	display: flex;
+	margin: 25px 0px;
+}
+.s-box-icon{
+	margin-right:12px;
+}
+.s-box-icon i{
+	width:40px;
+	height: 40px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #f0f0f0;
+	font-size: 1.1rem;
+}
+.s-box-text strong{
+	color:#1c3548;
+	margin: 0px;
+	font-size: 0.9rem;
+	font-weight: 600;
+}
+.s-box-text p{
+	color:#747474;
+	font-size: 0.9rem;
+}
+.fa-html5{
+	color:#e06061;
+}
+.fa-css3-alt{
+	color:#416cdf;
+}
+.fa-js-square{
+	color:#f98231;
+}
+
+	</style>
+	
+</head>
+<body>
+	<section id="main">
+<nav>
+	<!--logo--------------->
+	<a href="#" class="logo">
+		<img src="logo.png"/>	
+	</a>
+	<!--menu-btn-------------->
+		<input class="menu-btn" type="checkbox" id="menu-btn">
+		<label class="menu-icon" for="menu-btn">
+			<span class="nav-icon"></span>
+		</label>
+	<!--menu-------------->
+	<ul class="menu">
+		<li><a href="#main">Home</a></li>	
+		<li><a href="#skills">Skills</a></li>	
+		<li><a href="#recent">Projects</a></li>	
+		<li><a href="#client">Achievements</a></li>	
+		<li><a href="#contact">Publications</a></li>	
+	</ul>
+	<!--say-hey--------->
+	<a href="#" class="Contact">Contact Me</a>
+	</nav>
+    </section>
+
+  <!--content----------------->
+	<div class="content">
+	<!--model--------------->
+	<div class="model">
+		<img src="images/model.png"/>	
+	</div>
+	<!--text-------------->
+	<div class="main-text">
+		<h1>Hello, I am Ahnaf</h1>
+		<p>I am interested in Competitive Programming</p>
+	<!--btn------->
+		<a href="#" class="portfolio-btn">See My Portfolio</a>
+	</div>
+	</div>
+
+	 <!--skills------------->
+	<section id="skills">
+	<!--text--------->
+	<div class="skill-text">
+		<!--heading-->
+		<div class="skill-heading">
+		<span>My Skills</span>
+		<h2>My Experties</h2>
+		</div>
+		<!--skill-box-container----------->
+		<div class="s-box-container">
+		<!--skill-box-------------->
+		<div class="skill-box">
+		<!--icon------->
+		<div class="s-box-icon">
+			<i class="fab fa-html5"></i>
+		</div>
+		<!--skill-box-text--------->
+		<div class="s-box-text">
+		<strong>Hyper Text Markup Language(HTML)</strong>
+		<p>I have 3 years experience in HTML and i completed 100+ HTML project.</p>
+		</div>
+		</div>
+		<!--skill-box-------------->
+		<div class="skill-box">
+		<!--icon------->
+		<div class="s-box-icon">
+			<i class="fab fa-css3-alt"></i>
+		</div>
+		<!--skill-box-text--------->
+		<div class="s-box-text">
+		<strong>Cascading Style Sheets(CSS)</strong>
+		<p>I have 3 years experience in CSS and i completed 100+ CSS project.</p>
+		</div>
+		</div>
+		<!--skill-box-------------->
+		<div class="skill-box">
+		<!--icon------->
+		<div class="s-box-icon">
+			<i class="fab fa-js-square"></i>
+		</div>
+		<!--skill-box-text--------->
+		<div class="s-box-text">
+		<strong>JavaScript(Js)</strong>
+		<p>I have 3 years experience in JavaScript and i completed 100+ Js project.</p>
+		</div>
+		</div>
+			
+			
+		</div>
+	</div>
+	<!--img--------------->
+	<div class="skill-img">
+	<img src="images/skill2.png"/>	
+	</div>
+	</section>
+
+</body>
+</html>
